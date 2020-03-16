@@ -3,8 +3,10 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
+@app.route('/index')
+@app.route('/home')
 def hello():
-    return 'Welcome to My Watchlist!'
+    return 'Welcome to My Watchlist! <h1?My name is andy.</h1><img src="http://helloflask.com/totoro.gif">'
 
 @app.route('/user/<name>')
 def user_page(name):
