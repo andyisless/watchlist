@@ -1,10 +1,13 @@
 from flask import url_for
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
 @app.route('/index')
 @app.route('/home')
+def index():
+    return render_template('index.html', name=name, movies=movies)
+
 def hello():
     return 'Welcome to My Watchlist! <h1?My name is andy.</h1><img src="http://helloflask.com/totoro.gif">'
 
@@ -24,3 +27,11 @@ def test_url_for():
     print(url_for('test_url_for'))  # 输出:/test     # 下面这个调用传入了多余的关键字参数,它们会被作为查询字符串附加到 URL 后面。
     print(url_for('test_url_for', num=2))  # 输出:/test?num=2
     return 'Test page'
+
+name = 'Andy'
+movies = [
+    {'title':'My Neighbor Totoro', 'year':'1988'},
+    {'title':'Dead poet society', 'year':'1989'},
+    {'title':'A perfect world', 'year':'1993'},
+    {'title':'Leon', 'year':'1994'},
+]
