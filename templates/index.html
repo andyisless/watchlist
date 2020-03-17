@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <titile>
         {{name}}`s Watch list.
     </titile>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h2>
+        <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">
         {{name}}`s Watchlist
     </h2>
+    <img alt="Walking Totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}">
     <p>
         {{moives|length }} Titles
     </p>
